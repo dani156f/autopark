@@ -1,15 +1,9 @@
 import { chromium } from "playwright";
-import { readFile } from "fs/promises";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { listVehicles } from "./db.js";
 
 async function registerAll() {
   try {
-    const data = await readFile(join(__dirname, "database.json"), "utf-8");
-    const vehicles = JSON.parse(data).vehicles;
+    const vehicles = listVehicles();
 
     vehicles.forEach((vehicle) => {
       registerVehicle(vehicle.license, vehicle.phone);

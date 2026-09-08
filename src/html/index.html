@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatic Parking Registration</title>
+  <link rel="stylesheet" href="/css/output.css" />
+</head>
+<body class="bg-gray-300">
+  <header class="bg-gray-500">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
+      <div class="flex items-center gap-2">
+        <img class="shadow-lg h-10 bg-white rounded" src="/media/car-logo-black.png"></img>
+      </div>
+      <button id="logout" class="shadow-lg text-sm rounded px-4 py-2 bg-white cursor-pointer hover:bg-gray-400 hover:text-white">Log out</button>
+    </div>
+  </header>
+
+  <section id="vehicles" class="mx-auto min-h-[1vh] max-w-3xl px-6 py-20">
+
+    <div class="shadow-lg mb-10 border-3 border-red-500 p-6 text-md rounded-xl bg-white">
+        <p>Vehicles will be automatically registered every working day at 7:00 AM and remain registered for 10 hours. Disabled vehicles will not be registered. </br></br>Users are responsible for verifying that their vehicle has been successfully registered. In the event of a system failure, error, or interruption that prevents registration, the user remains solely responsible for any resulting parking fines, penalties, or other costs. The system provider accepts no liability for such consequences.</p>
+    </div>
+
+    <h2 class="text-3xl font-bold">Register new vehicle</h2>
+
+    <form id="vehicle-form" class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <input
+        id="license"
+        type="text"
+        required
+        placeholder="License plate (e.g. AB12345)"
+        class="shadow-lg flex-1 rounded-lg px-4 py-2.5 text-sm bg-white"
+      />
+      <input
+        id="phone"
+        type="text"
+        placeholder="Phone number"
+        class="shadow-lg flex-1 rounded-lg px-4 py-2.5 text-sm bg-white"
+      />
+      <button
+        type="submit"
+        class="shadow-lg rounded-lg px-6 py-2.5 text-sm text-white font-medium bg-blue-500 hover:bg-blue-600 cursor-pointer"
+      >
+        Add vehicle
+      </button>
+    </form>
+    <p id="form-error" class="mt-2 hidden text-sm"></p>
+    <p id="form-success" class="mt-2 hidden text-sm text-green-500"></p>
+
+    <h2 class="text-3xl font-bold mt-8">Manage your vehicles</h2>
+
+    <ul id="vehicle-list" class="mt-8 divide-y rounded-xl shadow-lg bg-white"></ul>
+    <p id="empty-state" class="mt-8 hidden text-center text-sm">
+      No vehicles yet — add one above.
+    </p>
+  </section>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

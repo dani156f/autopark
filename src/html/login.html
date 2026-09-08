@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log in — automatic parking registration</title>
+  <link rel="stylesheet" href="/css/output.css" />
+</head>
+<body class="flex min-h-screen items-center justify-center bg-gray-300">
+
+  <main class="w-full max-w-sm px-6">
+    <div class="rounded-xl p-6 bg-white">
+      <h1 class="text-xl font-semibold">Enter your invite code</h1>
+      <p class="mt-1 text-sm text-gray-500">
+        Use the code you were given to access your dashboard.
+      </p>
+
+      <form id="login-form" class="mt-6 flex flex-col gap-3">
+        <input
+          id="code"
+          type="text"
+          required
+          autocomplete="off"
+          placeholder="Invite code"
+          class="rounded-lg border px-4 py-2.5 text-sm focus:outline-none"
+        />
+        <button
+          type="submit"
+          class="rounded-lg px-6 py-2.5 bg-blue-500 text-sm text-white font-medium cursor-pointer hover:bg-blue-600"
+        >
+          Log in
+        </button>
+      </form>
+      <p id="login-error" class="mt-3 hidden text-sm text-red-400"></p>
+    </div>
+  </main>
+
+  <script src="/js/login.js"></script>
+</body>
+</html>
